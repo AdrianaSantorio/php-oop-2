@@ -1,0 +1,3 @@
+<?php
+
+//customer + registration id
