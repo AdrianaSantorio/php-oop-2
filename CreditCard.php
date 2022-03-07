@@ -66,9 +66,10 @@ class CreditCard
     //*VALIDITY
     public function setValidity($month, $year)
     {
-        $current_year = 2022;
-        $current_month = 03;
-        //TODO:recuperare mese e anno corrente
+        $current_year = idate('Y');
+        echo $current_year;
+        $current_month = idate('m');
+        echo $current_month;
 
         if ($year > $current_year && !($year > ($current_year + 5))) {
             $this->valid = true;
