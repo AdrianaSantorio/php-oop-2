@@ -6,18 +6,19 @@ require_once __DIR__ . '/Shop.php';
 class Product
 {
 
-    public $ID;
+    public $product_ID;
     public $name;
     public $price;
     public $barcode;
-    public $in_stock; //(o vailable se mi semplifica la vita)
+    public bool $in_stock; //(o available se mi semplifica la vita)
 
-    public function __construct($name, $price, $barcode)
+    public function __construct($name, $price, $barcode, $product_ID)
     {
         $this->name = $name;
         $this->price = $price;
         $this->barcode = $barcode;
-        $this->in_stock = true;
+        $this->setProductID($product_ID); //si può fare in modo più fico ma non lo so
+        $this->in_stock = true; //TODO: instock dipende da inventory in shop
     }
 
     public function getProductPrice()
@@ -30,14 +31,23 @@ class Product
         $this->price = $price;
     }
 
-    public function setID($ID)
+    public function setProductID($product_ID)
     {
-        $this->ID = $ID;
+        $this->product_ID = $product_ID;
+    }
+
+    public function setInStock($stock)
+    {
+        if (!$stock) {
+            $this->in_stock = false;
+        } else {
+            $this->in_stock = true;
+        }
     }
 }
 
 
-$shiba_beef = new Product('Royak cani Maxi Adult 15 KG', 57.50, '3855679');
+$shiba_beef = new Product('Royal cani Maxi Adult 15 KG', 57.50, '3855679', '1');
 
 echo $shiba_beef->name;
 

@@ -23,11 +23,14 @@ class Cart
 
     public function addToCart($product)
     {
-        //se il prodotto esiste (fa parte di product)
-        //se il prodotto è disponibile
-
-        $this->products[] = $product;
-        $this->addToTotal($product);
+        if (!($product instanceof Product)) { //se il prodotto esiste (fa parte di product)
+            //errore    //TODO:controllo anche se il prodotto è presente nell' inventario?
+        } else if (!($product->in_stock)) {     //se il prodotto è disponibile
+            //errore
+        } else {    //TODO:si potrebbe gestire la quantità? se il prodotto è già nel carrello e in quel caso aumentare semplicemente la quantità
+            $this->products[] = $product;
+            $this->addToTotal($product);
+        }
     }
 
     public function addToTotal($product)

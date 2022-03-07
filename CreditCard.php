@@ -11,12 +11,12 @@ class CreditCard
     public $valid;
 
     //*COSTRUTTORE
-    public function __construct(int $card_number, $card_holder, int $month, int $year, bool $solvent)
+    public function __construct(int $card_number, $card_holder, int $month, int $year)
     {
         $this->setCardNumber($card_number);
         $this->setExpirationDate($month, $year);
         $this->card_holder = $card_holder;
-        $this->solvent = $solvent;
+        $this->solvent = true;
         $this->purchases = 0;
     }
 
@@ -70,12 +70,12 @@ class CreditCard
         $current_month = 03;
         //TODO:recuperare mese e anno corrente
 
-        if ($year > $current_year) {
-            $this->valid = false;
-        } else if ($year < $current_year && $year > ($current_year - 5)) {
+        if ($year > $current_year && !($year > ($current_year + 5))) {
             $this->valid = true;
+        } else if ($year < $current_year) {
+            $this->valid = false;
         } else if ($year = $current_year) {
-            if (($month <= $current_month)) {
+            if (($month >= $current_month)) {
                 $this->valid = true;
             } else {
                 $this->valid = false;
@@ -85,6 +85,14 @@ class CreditCard
 
     public function getValidity()
     {
-        return $this->validity;
+        return $this->valid;
     }
 }
+
+$my_card = new CreditCard(7826291037482918, 'Adriana Santorio', 02, 2025);
+
+var_dump($my_card);
+
+$another_card = new CreditCard(7826291037482918, 'Adriana Santorio', 03, 2022);
+
+var_dump($another_card);

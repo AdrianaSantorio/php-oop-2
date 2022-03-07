@@ -14,14 +14,17 @@ class RegisteredCustomer extends Customer
 
 
 
-    public function purchase()
-    {
-        //success, add points
+    // public function purchase()
+    // {
 
-        //funzione add points
-        //this cart total 
+    //     //applicare sconto
+
+    //     //success, add points
+
+    //     //funzione add points
+    //     //this cart total 
 
 
 
-    }
+    // }
 }
