@@ -39,10 +39,3 @@ class Shop
     //*AGGIUNGERE CLIENTI
     //*RIMUOVERE CLIENTI
 }
-
-
-$pet_shop = new Shop;
-
-$pet_shop->addProductToInventory($shiba_beef, 2);
-
-var_dump($pet_shop);

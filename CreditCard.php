@@ -87,11 +87,3 @@ class CreditCard
         return $this->valid;
     }
 }
-
-$my_card = new CreditCard(7826291037482918, 'Adriana Santorio', 02, 2025);
-
-var_dump($my_card);
-
-$another_card = new CreditCard(7826291037482918, 'Adriana Santorio', 03, 2022);
-
-var_dump($another_card);

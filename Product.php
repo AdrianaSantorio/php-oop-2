@@ -1,8 +1,4 @@
 <?php
-
-require_once __DIR__ . '/Shop.php';
-
-
 class Product
 {
 
@@ -45,14 +41,3 @@ class Product
         }
     }
 }
-
-
-$shiba_beef = new Product('Royal cani Maxi Adult 15 KG', 57.50, '3855679', '1');
-
-echo $shiba_beef->name;
-
-echo '<br>';
-
-echo $shiba_beef->getProductPrice();
-
-var_dump($shiba_beef);

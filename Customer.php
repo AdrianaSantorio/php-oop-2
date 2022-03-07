@@ -43,6 +43,7 @@ class Customer
     {
         $this->cart = new Cart($ID);
     }
+    //? devo aggiungere qui una funzione Add to Cart?
     //*CLIENT INFO
     public function setClientInfo($first_name, $last_name, $shipping_address, $card_holder, $card_number, $month, $year)
     {
@@ -100,41 +101,3 @@ class Customer
         }
     }
 }
-
-
-$pippo = new Customer;
-
-var_dump($pippo);
-
-$pippo->cart->addToCart($shiba_beef);
-
-var_dump($pippo->cart);
-
-$pippo->cart->addToCart($shiba_beef);
-
-echo 'CARRELLO pre';
-var_dump($pippo->cart);
-echo 'CC pre';
-var_dump($pippo->credit_card);
-echo 'PRODOTTO pre';
-var_dump($shiba_beef);
-echo 'INVENTARIO pre';
-var_dump($pet_shop->inventory);
-echo 'ORDERS pre';
-var_dump($pippo->orders);
-
-
-$pippo->purchase($pet_shop, 'Adriana', 'Santorio', 'Via dei matti n°0', 'Eduardo Santorio', 9382736482718273, 05, 2022);
-
-echo 'CLIENTE post';
-var_dump($pippo);
-echo 'CARRELLO post';
-var_dump($pippo->cart);
-echo 'CC post';
-var_dump($pippo->credit_card);
-echo 'PRODOTTO post';
-var_dump($shiba_beef);
-echo 'INVENTARIO post';
-var_dump($pet_shop->inventory);
-echo 'ORDERS post';
-var_dump($pippo->orders);
