@@ -67,9 +67,7 @@ class CreditCard
     public function setValidity($month, $year)
     {
         $current_year = idate('Y');
-        echo $current_year;
         $current_month = idate('m');
-        echo $current_month;
 
         if ($year > $current_year && !($year > ($current_year + 5))) {
             $this->valid = true;

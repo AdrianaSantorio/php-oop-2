@@ -29,6 +29,7 @@ class Customer
     {
         $this->temporary_ID = rand(10000, 99999);
     }
+
     //*CART
     public function setCart($ID)
     {
